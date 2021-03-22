@@ -1,8 +1,10 @@
 import 'dart:io';
 
+int hitungJumlahDeretBilangan(int angka) =>
+    (angka / 2 * (2 + (angka - 1))).round();
+
 void main(List<String> args) {
-  var jumlah = 0;
-  int angka;
+  int angka, jumlah;
 
   stdout.write('Input: ');
   angka = int.tryParse(stdin.readLineSync());
@@ -13,8 +15,9 @@ void main(List<String> args) {
     if (i < angka) {
       stdout.write(' + ');
     }
-    jumlah += i;
   }
+
+  jumlah = hitungJumlahDeretBilangan(angka);
 
   print('\nOutput: $jumlah');
 }
